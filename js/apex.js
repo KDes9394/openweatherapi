@@ -22,10 +22,9 @@ const siteElements = {
 };
 
 const createList = (name, forecast, forecast_description, currentTemperature, lowTemp, highTemp, humidity) => {
-    let bg_img;
     console.log(forecast);
     const html = 
-    `<div class='containerS' id='${name.toLowerCase()}'><ul class='container defaults ${bg_img}'>`,
+    `<div class='containerS' id='${name.toLowerCase()}'><ul class='container defaults>`,
         `<li><h4>${name}</h4></li>`,
         `<li><h5>${forecast}</h5></li>`,
         `<li>Weather forecast prediction: ${forecast_description}</li>`,
@@ -36,17 +35,14 @@ const createList = (name, forecast, forecast_description, currentTemperature, lo
         `<button type="button" class="btn-close btn-close-white close-btn" onclick="deleteSelf('${name.toLowerCase()}')" aria-label="Close"></button>`,
     document.insertAdjacentHTML('beforeend', html).querySelector(siteElements.weatherDetails);
 };
-const loadData = async (name) => {
-    const myResponse = await getCity(name);
-    createList(myResponse.name, myResponse.forecast, myResponse.forecast_description, myResponse.currentTemperature, myResponse.lowTemp, myResponse.highTemp, myResponse.humidity);
-}
-const form = document.querySelector('#qCityDb');
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     let cityValue = event.path[0][0].value;
     loadData(cityValue);
 });
-const deleteSelf = (id) => {
-    let myStuff = document.getElementById(id);
-    myStuff.remove();
+const loadData = async (name) => {
+    const displayAnswer = await getCity(name);
+    createList(displayAnswer.name, displayAnswer.forecast, displayAnswer.forecast_description, displayAnswer.currentTemperature, displayAnswer.lowTemp, displayAnswer.highTemp, displayAnswer.humidity);
+}
+const form = document.querySelector('#qCityDb');
 }
