@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="SimepleWeatherAPP">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+<link rel="stylesheet" href="html.css">
+<script src="/js/apex.js" defer></script>
+<title>Weather Lookup</title>
+</head>
+<body>
+    <div class="container main">
+        <div class="container">
+            <h1>Simple Weather App</h1>
+            <form class="search-bar" id="qCityDb">
+                <div class="col-auto me-2">
+                    <input type="text" id="responseCheck" class="form-control"  placeholder="Search for a city">
+                  </div>
+                  <div class="col-auto">
+                    <button type="lookup" class="btn btn-primary mb-3">LOOKUP</button>
+                  </div>
+            </form>
+        </div>
+
+    
+        <div class="containerL weather-info" id="weather-info"></div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"></script>
+</body>
+</html>
